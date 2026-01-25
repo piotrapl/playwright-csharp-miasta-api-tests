@@ -1,0 +1,48 @@
+# =========================
+# .NET / C# build outputs
+# =========================
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+
+# =========================
+# Test results
+# =========================
+TestResults/
+
+# =========================
+# Playwright
+# =========================
+playwright-report/
+playwright/.cache/
+*.zip
+
+# =========================
+# IDEs / Editors
+# =========================
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# =========================
+# OS files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Environment / secrets
+# =========================
+.env
+.env.*
