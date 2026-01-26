@@ -15,18 +15,21 @@ public abstract class TestBase
     {
         Playwright = await Microsoft.Playwright.Playwright.CreateAsync();
 
-        Api = await Playwright.APIRequest.NewContextAsync(new APIRequestNewContextOptions
-        {
-            BaseURL = BaseUrl,
-            // If the API ever requires headers/auth later, add here.
-            // ExtraHTTPHeaders = new Dictionary<string, string> { ["X-Api-Key"] = "..." }
-        });
+        Api = await Playwright.APIRequest.NewContextAsync(
+            new APIRequestNewContextOptions
+            {
+                BaseURL = BaseUrl,
+                IgnoreHTTPSErrors = true   // ✅ FIX: ignore expired / invalid TLS cert
+            }
+        );
     }
 
     [OneTimeTearDown]
     public async Task OneTimeTearDown()
     {
-        if (Api is not null) await Api.DisposeAsync();
+        if (Api is not null)
+            await Api.DisposeAsync();
+
         Playwright?.Dispose();
     }
 }
