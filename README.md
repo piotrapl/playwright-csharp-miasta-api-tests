@@ -4,7 +4,7 @@ Definiuje i uruchamia zestaw automatycznych testów API dla serwisu local-gov-un
 
 **english abstract:**
 
-*It defines and runs an automated API test suite for local-gov-units.polandapi.com. It sends HTTP requests using Playwright’s APIRequestContext and asserts responses**
+*This project defines and runs an automated API test suite for local-gov-units.polandapi.com. It sends HTTP requests using Playwright’s APIRequestContext and asserts responses**
 
 ## Wymagania (prerequisites)
 
