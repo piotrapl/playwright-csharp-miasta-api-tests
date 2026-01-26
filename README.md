@@ -1,9 +1,9 @@
-### Co robi ten projekt?
+### Jakie jest przeznaczenie tego projektu ?
 
-PolandApi.ApiTests to zestaw automatycznych testów API dla serwisu local-gov-units.polandapi.com. Testy wykonują zapytania HTTP (GET/POST itd.) przez Playwright APIRequestContext i weryfikują odpowiedzi (statusy, payload, zachowanie endpointów).
+Definiuje i uruchamia zestaw automatycznych testów API dla serwisu local-gov-units.polandapi.com. Testy wykonują zapytania HTTP (GET/POST itd.) przez Playwright APIRequestContext i weryfikują odpowiedzi (statusy, payload, zachowanie endpointów).
 
 **english abstract**
-**is an automated API test suite for local-gov-units.polandapi.com. It sends HTTP requests using Playwright’s APIRequestContext and asserts responses**
+*It defines and runs an automated API test suite for local-gov-units.polandapi.com. It sends HTTP requests using Playwright’s APIRequestContext and asserts responses**
 
 ## Wymagania (prerequisites)
 
@@ -15,7 +15,7 @@ Zainstalowane zależności NuGet (restore wykona się automatycznie przy dotnet 
 
 Uwaga: jeśli środowisko testowe ma wygasły / nieprawidłowy certyfikat TLS, w projekcie może być użyte IgnoreHTTPSErrors = true w konfiguracji kontekstu API (jak w TestBase.cs).
 
-## Jak uruchomić testy?
+## Jak uruchomić testy ? (how to run tests ?)
 
 Z katalogu repozytorium (lub folderu z solution/projektem):
 
@@ -26,7 +26,7 @@ Opcjonalnie, z większą ilością logów:
 
 dotnet test PolandApi.ApiTests/PolandApi.ApiTests.csproj -v normal
 
-## Co można ulepszyć?
+## Co można ulepszyć? (what can be improved ?)
 
 - Konfiguracja przez appsettings / zmienne środowiskowe (BaseURL, flagi TLS, timeouts)
 
@@ -36,7 +36,7 @@ dotnet test PolandApi.ApiTests/PolandApi.ApiTests.csproj -v normal
 
 - Pokrycie negatywne: więcej testów błędów (404/400), walidacje, edge-case’y, testy bezpieczeństwa (np. nagłówki)
 
-## Jak można rozszerzyć projekt?
+## Jak można rozszerzyć projekt? (what are possible extentions ?)
 
 - Dodać testy dla kolejnych zasobów (np. województwa/powiaty/gminy, wyszukiwarki, paginacja)
 
