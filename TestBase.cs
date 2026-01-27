@@ -33,6 +33,8 @@ public abstract class TestBase
             }
         );
     }
+// [OneTimeTearDown] - atrybut NUnit
+// wskazuje, że metoda ma być uruchomiona raz po wszystkich testach w klas
 // Task to reprezentacja asynchronicznej operacji, która może zakończyć się sukcesem lub błędem
 // zawiera o tym informację (succces czy error) i pozwala na oczekiwanie na jej zakończenie
 
