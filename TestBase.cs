@@ -16,6 +16,10 @@ public abstract class TestBase
 
     private const string BaseUrl = "https://local-gov-units.polandapi.com";
 
+// OneTimeSetUp - metoda uruchamiana raz przed wszystkimi testami w klasie
+// - wskazuje, że metoda ma być uruchomiona raz przed wszystkimi testami w klasie
+// async - metoda asynchroniczna
+//   więc pozwala na wykonywanie operacji, które mogą zająć trochę czasu (np. sieciowe)
     [OneTimeSetUp]
     public async Task OneTimeSetup()
     {
