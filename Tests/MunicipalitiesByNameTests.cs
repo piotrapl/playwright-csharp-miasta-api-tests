@@ -24,17 +24,19 @@ public class MunicipalitiesByNameTests : TestBase
     [TestCaseSource(nameof(PositiveNames))]
     public async Task Get_municipalities_by_name_should_return_success_true_and_data(string name)
     {
-        // Arrange
+        // przygotowanie
         var url = $"/api/v1/municipalities/name/{Uri.EscapeDataString(name)}";
 
-        // Act
+        // działanie
         var response = await Api.GetAsync(url);
         var body = await response.TextAsync();
 
-        // Assert (status)
+        // Weryfikacja czy status odpowiedzi HTTP jest OK (200)
         Assert.That(response.Ok, Is.True, $"HTTP failed. Status: {(int)response.Status} Body: {body}");
 
-        // Assert (JSON contains success:true and data)
+        // Weryfikacja czy odpowiedź JSON zawiera pole success ustawione na true oraz blok data
+        // using var - deklaracja zmiennej lokalnej z automatycznym zarządzaniem zasobami
+        //   using var ponieważ JsonDocument implementuje IDisposable i wymaga uwolnienia zasobów
         using var doc = JsonDocument.Parse(body);
         var root = doc.RootElement;
 
