@@ -39,7 +39,7 @@ public abstract class TestBase
         );
     }
 // [OneTimeTearDown] - atrybut NUnit
-// mówi, że metoda ma być uruchomiona raz po wszystkich testach w klas
+// mówi, że metoda ma być uruchomiona raz po wszystkich testach w klasie
 // Task to reprezentacja asynchronicznej operacji, która może zakończyć się sukcesem lub błędem
 // zawiera o tym informację (succces czy error) i pozwala na oczekiwanie na jej zakończenie
 
@@ -52,9 +52,7 @@ public abstract class TestBase
         Playwright?.Dispose();
     }
 }
+// - DisposeAsync() - metoda asynchroniczna, pozwala na uwolnienie zasobów w sposób nieblokujący, 
+//                 to ważne przy operacjach sieciowych, czasem czasochłonnych
 
-// DisposeAsync() vs Dispose() 
-// - DisposeAsync() jest metodą asynchroniczną, pozwala na uwolnienie zasobów w sposób nieblokujący, 
-//   to ważne przy operacjach sieciowych, czasem czasochłonnych
-
-// - Dispose() jest metodą synchroniczną, blokuje wątek do czasu uwolnienia zasobów,
+// - Dispose() - metoda synchroniczna, blokuje wątek do czasu uwolnienia zasobów,
