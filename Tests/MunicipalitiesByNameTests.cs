@@ -54,13 +54,13 @@ public class MunicipalitiesByNameTests : TestBase
         Assert.That(
             root.TryGetProperty("success", out var success) && success.ValueKind == JsonValueKind.True,
             Is.True,
-            $"Expected JSON field success=true. Body: {body}"
+            $"Oczekujemy, źe pole 'success' w JSON ma wartość true. Body: {body}"
         );
 
         Assert.That(
             root.TryGetProperty("data", out var data) && data.ValueKind != JsonValueKind.Null,
             Is.True,
-            $"Expected JSON block data to exist (and not be null). Body: {body}"
+            $"Oczekujemy, źe w JSON istnieje blok data i nie jest pusty (null). Body: {body}"
         );
     }
 }
@@ -70,3 +70,7 @@ public class MunicipalitiesByNameTests : TestBase
 // - sprawdzenie czy wartość pola "success" jest typu boolean i ma wartość true
 // data.ValueKind != JsonValueKind.Null 
 // - sprawdzenie czy pole "data" istnieje i nie jest null (zawiera jakieś dane)
+
+// znak  $" - interpolacja stringów w C#, pozwala na bezpośrednie wstawianie wartości zmiennych 
+// do tekstu, np. $"/api/v1/municipalities/name/{Uri.EscapeDataString(name)}" 
+// daje URL z zakodowaną nazwą miasta
