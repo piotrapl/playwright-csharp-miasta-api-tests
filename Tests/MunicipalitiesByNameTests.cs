@@ -32,7 +32,7 @@ public class MunicipalitiesByNameTests : TestBase
         // Przygotowanie
         var url = $"/api/v1/municipalities/name/{Uri.EscapeDataString(name)}";
 
-        // Wykonanie
+        // Wykonanie: Api.GetAsync(url) - metoda do wysyłania żądania GET do określonego URL
         var response = await Api.GetAsync(url);
         var body = await response.TextAsync();
 
