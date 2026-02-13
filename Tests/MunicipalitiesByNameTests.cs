@@ -30,7 +30,10 @@ public class MunicipalitiesByNameTests : TestBase
     public async Task Get_municipalities_by_name_should_return_success_true_and_data(string name)
     {
         // Przygotowanie
-    
+        // {Uri.EscapeDataString(name)} - metoda do kodowania nazwy miasta w formacie URL, aby uniknąć problemów z niektórymi znakami
+        // np. spacje zamienia na %20,
+        //     polskie znaki diakrytyczne (np. ł, ś) też zakodowuje np. ł -> %C5%82, ś -> %C5%9B
+
         var url = $"/api/v1/municipalities/name/{Uri.EscapeDataString(name)}";
 
         // Wykonanie: Api.GetAsync(url) - metoda do wysyłania żądania GET do określonego URL
