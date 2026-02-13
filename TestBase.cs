@@ -52,3 +52,7 @@ public abstract class TestBase
         Playwright?.Dispose();
     }
 }
+
+// DisposeAsync() vs Dispose() 
+// - DisposeAsync() jest metodą asynchroniczną, pozwala uwolnić zasoby w sposób nieblokujący,
+//  co jest ważne przy operacjach sieciowych, czasem czasochłonnych
