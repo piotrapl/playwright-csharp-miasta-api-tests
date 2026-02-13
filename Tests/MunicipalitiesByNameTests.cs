@@ -16,6 +16,7 @@ namespace PolandApi.ApiTests;
 // IEnumerable<TestCaseData> - kolekcja danych testowych dla NUnit
 // [TestFixture] - atrybut NUnit
 // oznacza że ta klasa jest fiksturą (fixture) testową NUnit czyli klasą zawierającą testy
+[TestFixture]
 public class MunicipalitiesByNameTests : TestBase
 {
     public static IEnumerable<TestCaseData> PositiveNames()
